@@ -752,3 +752,18 @@ body.tab-mode.page-watch footer{margin-top:12px !important;}
   #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
 }
 </style>
+<style id="compact-page-bottom-final">
+/* Keep inner pages compact: no tall empty tail after the last visible section. */
+body.tab-mode:not(.page-home){background:var(--paper) !important;min-height:0 !important;}
+body.tab-mode:not(.page-home) main{padding-bottom:24px !important;min-height:0 !important;}
+body.tab-mode:not(.page-home) .app-page:last-of-type{margin-bottom:0 !important;}
+body.tab-mode.page-guide #pos,
+body.tab-mode.page-league #titles,
+body.tab-mode.page-watch #faq{margin-bottom:0 !important;}
+body.tab-mode.page-league #titles .tip:last-child,
+body.tab-mode.page-watch #faq > *:last-child,
+body.tab-mode.page-guide #pos > *:last-child{margin-bottom:0 !important;}
+@media(max-width:650px){
+  body.tab-mode:not(.page-home) main{padding-bottom:20px !important;}
+}
+</style>
