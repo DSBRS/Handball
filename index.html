@@ -99,6 +99,18 @@ body.tab-mode.page-home footer:before{content:"";position:absolute;left:50%;top:
  body.tab-mode.page-home .hero-inner{min-height:calc(100vh - 62px);justify-content:flex-start;padding-top:78px;padding-bottom:100px}
  body.tab-mode.page-home footer{padding:20px 24px 30px;font-size:12px;line-height:1.7}
 }
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+}
 </style>
 <style>
 @media (max-width:650px){
@@ -107,6 +119,18 @@ body.tab-mode.page-home footer:before{content:"";position:absolute;left:50%;top:
     line-height:1.65 !important;
     letter-spacing:-0.02em !important;
   }
+}
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
 }
 </style>
 </head><body><nav class="topnav"><a class="brand tab-link active" href="#home" data-page="home">HANDBALL</a><a class="tab-link" href="#basic" data-page="guide">핸드볼 입문</a><a class="tab-link" href="#league" data-page="league">H리그</a><a class="tab-link" href="#doosan" data-page="doosan">두산</a><a class="tab-link" href="#venue" data-page="watch">관람정보</a></nav><header id="home" class="hero"><div class="hero-inner"><span class="eyebrow">HANDBALL GUIDE · 2026-27</span><h1>오늘부터 같이 보는<br><em>HANDBALL</em></h1><p>경기 일정부터 규칙, H리그, 그리고 두산 선수단까지. 처음 보는 사람도 바로 즐길 수 있는 팬 메이드 핸드볼 가이드.</p><div class="hero-actions"><a href="#calendar" class="primary page-jump" data-page="schedule">두산 핸드볼단 경기 일정 보기</a><a href="#basic" class="secondary page-jump" data-page="guide">5분 입문 가이드</a></div><div class="hero-ball" aria-hidden="true">◉</div></div></header><main><section id="calendar" class="calendar-section app-page page-schedule"><div class="section-kicker">SCHEDULE</div><h2>경기 일정</h2><p class="lead">두산의 2026-27 정규리그 일정을 월별 달력으로 확인해요. 날짜를 누르면 경기 정보가 열립니다.</p><div class="calendar-toolbar"><button id="prevMonth" aria-label="이전 달">‹</button><strong id="calendarTitle"></strong><button id="nextMonth" aria-label="다음 달">›</button></div><div class="calendar-shell"><div class="weekdays"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div><div id="calendarGrid" class="calendar-grid"></div></div><div id="gameDetail" class="game-detail"><span class="empty">경기가 있는 날짜를 눌러보세요 🏐</span></div></section><section id="basic" class="app-page page-guide">
@@ -167,7 +191,7 @@ body.tab-mode.page-home footer:before{content:"";position:absolute;left:50%;top:
 <tr><th>상황</th><th>무슨 일이?</th></tr>
 <tr><td>가벼운 반칙</td><td><b>프리스로</b> – 반칙 위치에서 상대 팀이 공격 재개</td></tr>
 <tr><td><span class="foul-label">옐로<br>카드 🟨</span></td><td>경고. 한 팀당 총 3장까지, 한 선수는 1장까지만</td></tr>
-<tr><td><span class="foul-label">2분 퇴장 ✌️</span></td><td>2분 동안 코트 밖에서 대기 → 그 팀은 한 명 적게 뜀</td></tr>
+<tr><td><span class="foul-label">2분 퇴장</span></td><td>2분 동안 코트 밖에서 대기 → 그 팀은 한 명 적게 뜀</td></tr>
 <tr><td><span class="foul-label">레드<br>카드 🟥</span></td><td>실격. 그 선수는 퇴장하고, 팀은 2분 뒤 다른 선수로 채울 수 있어요</td></tr>
 <tr><td><span class="foul-label">7m 스로</span></td><td>득점 기회를 반칙으로 막았을 때 → 7m 선에서 슛 1:1</td></tr>
 </table>
@@ -184,10 +208,10 @@ body.tab-mode.page-home footer:before{content:"";position:absolute;left:50%;top:
 <path d="M240 15 A90 90 0 0 0 150 105 A90 90 0 0 0 240 195" fill="none" stroke="var(--ac2)" stroke-width="2" stroke-dasharray="6 5"/>
 <rect x="240" y="90" width="6" height="30" fill="var(--tx)"/>
 <g fill="var(--ac)" stroke="#fff" stroke-width="2">
-<circle cx="225" cy="22" r="13"/><circle cx="225" cy="188" r="13"/><circle cx="105" cy="55" r="13"/><circle cx="85" cy="105" r="13"/><circle cx="105" cy="155" r="13"/><circle cx="170" cy="105" r="13" fill="var(--ac2)"/>
+<circle cx="225" cy="22" r="13"/><circle cx="225" cy="188" r="13"/><circle cx="105" cy="55" r="13"/><circle cx="85" cy="105" r="13"/><circle cx="105" cy="155" r="13"/><circle cx="170" cy="105" r="13" fill="var(--ac2)"/><circle cx="218" cy="105" r="13" fill="var(--navy)"/>
 </g>
 <g font-size="10" fill="#fff" text-anchor="middle" font-weight="700">
-<text x="225" y="26">LW</text><text x="225" y="192">RW</text><text x="105" y="59">LB</text><text x="85" y="109">CB</text><text x="105" y="159">RB</text><text x="170" y="109">P</text>
+<text x="225" y="26">LW</text><text x="225" y="192">RW</text><text x="105" y="59">LB</text><text x="85" y="109">CB</text><text x="105" y="159">RB</text><text x="170" y="109">P</text><text x="218" y="109">GK</text>
 </g>
 <text x="120" y="198" font-size="10" fill="var(--mu)" text-anchor="middle">→ 공격 방향 (오른쪽 골대)</text>
 </svg>
@@ -401,7 +425,7 @@ body.tab-mode.page-home footer:before{content:"";position:absolute;left:50%;top:
 <details><summary>타임아웃도 있나요?</summary><p>있어요. 팀당 경기 중 3번(전·후반 각 최대 2번)까지 1분씩 작전 시간을 쓸 수 있어요.</p></details>
 <details><summary>공 크기는 남녀가 같아요?</summary><p>아니요. 여자 경기는 조금 더 작고 가벼운 공을 써요.</p></details>
 <details><summary>골키퍼가 없는 공격도 있다던데요?</summary><p>맞아요. 골키퍼를 빼고 필드 선수 한 명을 더 투입하는 ‘7대6 공격’ 전술이 있어요. 성공하면 크지만 공을 뺏기면 빈 골대에 먹히는 모험이에요.</p></details>
-<div class="watch-inline-footer">팬이 만든 비공식 핸드볼 정보 페이지예요. 세부 규칙·일정·기록은 한국핸드볼연맹 및 공식 자료를 확인하세요.</div></section></main><footer>팬이 만든 비공식 핸드볼 정보 페이지예요. 세부 규칙·일정·기록은 한국핸드볼연맹 및 공식 자료를 확인하세요.</footer><script>const games=[{"date": "2026-12-06", "time": "17:10", "match": "충남도청 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-10", "time": "15:40", "match": "인천도시공사 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-12", "time": "18:20", "match": "두산 vs 하남시청", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-19", "time": "16:10", "match": "두산 vs 상무", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-23", "time": "17:50", "match": "SK호크스 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-25", "time": "14:00", "match": "인천도시공사 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2027-01-07", "time": "19:10", "match": "두산 vs SK호크스", "venue": "충남 보령종합체육관", "team": "두산"}, {"date": "2027-01-10", "time": "16:10", "match": "하남시청 vs 두산", "venue": "충남 보령종합체육관", "team": "두산"}, {"date": "2027-01-16", "time": "14:00", "match": "상무 vs 두산", "venue": "충남 보령종합체육관", "team": "두산"}, {"date": "2027-01-21", "time": "19:10", "match": "두산 vs 충남도청", "venue": "여수 진남체육관", "team": "두산"}, {"date": "2027-01-24", "time": "16:10", "match": "인천도시공사 vs 두산", "venue": "여수 진남체육관", "team": "두산"}, {"date": "2027-01-29", "time": "20:00", "match": "SK호크스 vs 두산", "venue": "여수 진남체육관", "team": "두산"}, {"date": "2027-02-06", "time": "14:00", "match": "두산 vs 하남시청", "venue": "서울 티켓링크 라이브 아레나", "team": "두산"}, {"date": "2027-02-08", "time": "18:20", "match": "두산 vs 상무", "venue": "서울 티켓링크 라이브 아레나", "team": "두산"}, {"date": "2027-02-14", "time": "14:00", "match": "충남도청 vs 두산", "venue": "서울 티켓링크 라이브 아레나", "team": "두산"}, {"date": "2027-02-25", "time": "19:10", "match": "두산 vs 인천도시공사", "venue": "삼척 시민체육관", "team": "두산"}, {"date": "2027-02-28", "time": "14:00", "match": "두산 vs SK호크스", "venue": "삼척 시민체육관", "team": "두산"}, {"date": "2027-03-05", "time": "20:00", "match": "하남시청 vs 두산", "venue": "삼척 시민체육관", "team": "두산"}, {"date": "2027-03-12", "time": "17:50", "match": "상무 vs 두산", "venue": "광명 시민체육관", "team": "두산"}, {"date": "2027-03-14", "time": "16:10", "match": "두산 vs 충남도청", "venue": "광명 시민체육관", "team": "두산"}, {"date": "2027-03-21", "time": "18:20", "match": "두산 vs 인천도시공사", "venue": "광명 시민체육관", "team": "두산"}, {"date": "2027-03-25", "time": "17:50", "match": "두산 vs SK호크스", "venue": "부산 기장체육관", "team": "두산"}, {"date": "2027-03-28", "time": "14:00", "match": "하남시청 vs 두산", "venue": "부산 기장체육관", "team": "두산"}, {"date": "2027-04-02", "time": "15:40", "match": "상무 vs 두산", "venue": "부산 기장체육관", "team": "두산"}, {"date": "2027-04-10", "time": "16:10", "match": "두산 vs 충남도청", "venue": "광주 빛고을체육관", "team": "두산"}];let view=new Date(2026,11,1);const title=document.getElementById('calendarTitle'),grid=document.getElementById('calendarGrid'),detail=document.getElementById('gameDetail');function renderCalendar(){const y=view.getFullYear(),m=view.getMonth();title.textContent=`${y}년 ${m+1}월`;grid.innerHTML='';const first=new Date(y,m,1),start=new Date(y,m,1-first.getDay());for(let i=0;i<42;i++){const d=new Date(start);d.setDate(start.getDate()+i);const iso=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;const gs=games.filter(g=>g.date===iso);const b=document.createElement('button');b.className='day'+(d.getMonth()!==m?' other':'')+(gs.length?' has-game':'');const now=new Date();if(d.toDateString()===now.toDateString())b.classList.add('today');b.innerHTML=`<span class="num">${d.getDate()}</span>${gs.length?`<span class="match-icon" aria-hidden="true">🏐</span>${gs.length>1?`<span class="game-count">${gs.length}</span>`:''}`:''}`;if(gs.length)b.onclick=()=>{document.querySelectorAll('.day.selected').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');showGames(iso,gs)};grid.appendChild(b)}}function showGames(date,gs){const d=new Date(date+'T00:00:00');detail.innerHTML=`<strong>${d.getMonth()+1}월 ${d.getDate()}일 경기</strong>`+gs.map(g=>`<div class="match-card"><div class="match-time">${g.time}</div><div class="match-info"><b>${g.match}</b><small>📍 ${g.venue}</small></div></div>`).join('<hr style="border:0;border-top:1px solid var(--line);margin:14px 0">')}document.getElementById('prevMonth').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCalendar()};document.getElementById('nextMonth').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCalendar()};renderCalendar();
+<div class="watch-inline-footer"></div></section></main><script>const games=[{"date": "2026-12-06", "time": "17:10", "match": "충남도청 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-10", "time": "15:40", "match": "인천도시공사 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-12", "time": "18:20", "match": "두산 vs 하남시청", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-19", "time": "16:10", "match": "두산 vs 상무", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-23", "time": "17:50", "match": "SK호크스 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2026-12-25", "time": "14:00", "match": "인천도시공사 vs 두산", "venue": "인천 선학체육관", "team": "두산"}, {"date": "2027-01-07", "time": "19:10", "match": "두산 vs SK호크스", "venue": "충남 보령종합체육관", "team": "두산"}, {"date": "2027-01-10", "time": "16:10", "match": "하남시청 vs 두산", "venue": "충남 보령종합체육관", "team": "두산"}, {"date": "2027-01-16", "time": "14:00", "match": "상무 vs 두산", "venue": "충남 보령종합체육관", "team": "두산"}, {"date": "2027-01-21", "time": "19:10", "match": "두산 vs 충남도청", "venue": "여수 진남체육관", "team": "두산"}, {"date": "2027-01-24", "time": "16:10", "match": "인천도시공사 vs 두산", "venue": "여수 진남체육관", "team": "두산"}, {"date": "2027-01-29", "time": "20:00", "match": "SK호크스 vs 두산", "venue": "여수 진남체육관", "team": "두산"}, {"date": "2027-02-06", "time": "14:00", "match": "두산 vs 하남시청", "venue": "서울 티켓링크 라이브 아레나", "team": "두산"}, {"date": "2027-02-08", "time": "18:20", "match": "두산 vs 상무", "venue": "서울 티켓링크 라이브 아레나", "team": "두산"}, {"date": "2027-02-14", "time": "14:00", "match": "충남도청 vs 두산", "venue": "서울 티켓링크 라이브 아레나", "team": "두산"}, {"date": "2027-02-25", "time": "19:10", "match": "두산 vs 인천도시공사", "venue": "삼척 시민체육관", "team": "두산"}, {"date": "2027-02-28", "time": "14:00", "match": "두산 vs SK호크스", "venue": "삼척 시민체육관", "team": "두산"}, {"date": "2027-03-05", "time": "20:00", "match": "하남시청 vs 두산", "venue": "삼척 시민체육관", "team": "두산"}, {"date": "2027-03-12", "time": "17:50", "match": "상무 vs 두산", "venue": "광명 시민체육관", "team": "두산"}, {"date": "2027-03-14", "time": "16:10", "match": "두산 vs 충남도청", "venue": "광명 시민체육관", "team": "두산"}, {"date": "2027-03-21", "time": "18:20", "match": "두산 vs 인천도시공사", "venue": "광명 시민체육관", "team": "두산"}, {"date": "2027-03-25", "time": "17:50", "match": "두산 vs SK호크스", "venue": "부산 기장체육관", "team": "두산"}, {"date": "2027-03-28", "time": "14:00", "match": "하남시청 vs 두산", "venue": "부산 기장체육관", "team": "두산"}, {"date": "2027-04-02", "time": "15:40", "match": "상무 vs 두산", "venue": "부산 기장체육관", "team": "두산"}, {"date": "2027-04-10", "time": "16:10", "match": "두산 vs 충남도청", "venue": "광주 빛고을체육관", "team": "두산"}];let view=new Date(2026,11,1);const title=document.getElementById('calendarTitle'),grid=document.getElementById('calendarGrid'),detail=document.getElementById('gameDetail');function renderCalendar(){const y=view.getFullYear(),m=view.getMonth();title.textContent=`${y}년 ${m+1}월`;grid.innerHTML='';const first=new Date(y,m,1),start=new Date(y,m,1-first.getDay());for(let i=0;i<42;i++){const d=new Date(start);d.setDate(start.getDate()+i);const iso=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;const gs=games.filter(g=>g.date===iso);const b=document.createElement('button');b.className='day'+(d.getMonth()!==m?' other':'')+(gs.length?' has-game':'');const now=new Date();if(d.toDateString()===now.toDateString())b.classList.add('today');b.innerHTML=`<span class="num">${d.getDate()}</span>${gs.length?`<span class="match-icon" aria-hidden="true">🏐</span>${gs.length>1?`<span class="game-count">${gs.length}</span>`:''}`:''}`;if(gs.length)b.onclick=()=>{document.querySelectorAll('.day.selected').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');showGames(iso,gs)};grid.appendChild(b)}}function showGames(date,gs){const d=new Date(date+'T00:00:00');detail.innerHTML=`<strong>${d.getMonth()+1}월 ${d.getDate()}일 경기</strong>`+gs.map(g=>`<div class="match-card"><div class="match-time">${g.time}</div><div class="match-info"><b>${g.match}</b><small>📍 ${g.venue}</small></div></div>`).join('<hr style="border:0;border-top:1px solid var(--line);margin:14px 0">')}document.getElementById('prevMonth').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()-1,1);renderCalendar()};document.getElementById('nextMonth').onclick=()=>{view=new Date(view.getFullYear(),view.getMonth()+1,1);renderCalendar()};renderCalendar();
 const pageMap={home:'home',schedule:'schedule',guide:'guide',league:'league',doosan:'doosan',watch:'watch'};
 function openPage(page,updateHash=true){page=pageMap[page]?page:'home';document.body.classList.add('tab-mode');Object.values(pageMap).forEach(p=>document.body.classList.remove('page-'+p));document.body.classList.add('page-'+page);document.querySelectorAll('.tab-link').forEach(a=>a.classList.toggle('active',a.dataset.page===page));if(updateHash){const target={home:'home',schedule:'calendar',guide:'basic',league:'league',doosan:'doosan',watch:'venue'}[page];history.replaceState(null,'','#'+target)}window.scrollTo({top:0,behavior:'instant'});}
 document.querySelectorAll('.tab-link,.page-jump').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openPage(a.dataset.page)}));
@@ -459,6 +483,18 @@ window.addEventListener('hashchange',()=>openPage(hashPages[location.hash.slice(
   .doosan-banner + .doosan-sub{padding-top:0}
   .doosan-banner + .doosan-sub h2{font-size:29px;line-height:1.25;margin-bottom:10px}
   .doosan-banner + .doosan-sub .lead{font-size:16px;line-height:1.65}
+}
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
 }
 </style>
 
@@ -518,6 +554,18 @@ body.tab-mode.page-doosan .doosan-sub .lead{color:var(--mu) !important;}
   body.tab-mode.page-doosan .doosan-sub{padding-left:18px !important;padding-right:18px !important;margin-bottom:38px !important;}
   body.tab-mode.page-doosan .doosan-sub .grid{grid-template-columns:1fr !important;}
 }
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+}
 </style>
 
 <style id="requested-mobile-fixes">
@@ -542,6 +590,18 @@ body.tab-mode.page-watch footer{display:none}
  .venue-grid .chip small{font-size:11px}
  .watch-inline-footer{margin-top:28px;padding-bottom:10px;font-size:12px}
 }
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+}
 </style>
 </body></html><style>
 /* Home: poster first, navigation starts from inner pages */
@@ -559,6 +619,18 @@ body.tab-mode:not(.page-home) .topnav{display:flex}
  .topnav{overflow-x:hidden;gap:2px;padding:7px 8px;justify-content:space-between}
  .topnav a{flex:1 1 auto;min-width:0;padding:8px 5px;text-align:center;font-size:11px;white-space:nowrap}
  .topnav .brand{margin-right:0;font-size:11px;letter-spacing:.08em}
+}
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
 }
 </style>
 <style>
@@ -599,6 +671,18 @@ body.tab-mode:not(.page-home) .topnav{display:flex}
     bottom:25px!important;
   }
 }
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+}
 </style>
 
 <style id="mobile-fixed-home-final">
@@ -637,5 +721,34 @@ body.tab-mode:not(.page-home) .topnav{display:flex}
     flex-shrink:0;
   }
   body.tab-mode.page-home .hero-actions a{padding:11px 16px !important;}
+}
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+}
+</style>
+<style id="footer-content-follow-fix">
+body.tab-mode:not(.page-home) footer{margin:18px 0 0 !important;padding:20px 18px 26px !important;position:static !important;background:var(--paper) !important;}
+body.tab-mode.page-watch footer{margin-top:12px !important;}
+@media(max-width:650px){body.tab-mode:not(.page-home) footer{margin-top:10px !important;padding:18px 24px 24px !important;line-height:1.7 !important;}}
+
+/* championship table: bring team and wins columns closer */
+#titles table{table-layout:fixed;min-width:640px}
+#titles th:nth-child(1),#titles td:nth-child(1){width:150px;min-width:150px}
+#titles th:nth-child(2),#titles td:nth-child(2){width:90px;min-width:90px;white-space:nowrap;text-align:left}
+#titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
+@media(max-width:650px){
+  #titles table{min-width:600px}
+  #titles th:nth-child(1),#titles td:nth-child(1){width:140px;min-width:140px}
+  #titles th:nth-child(2),#titles td:nth-child(2){width:82px;min-width:82px;text-align:left}
+  #titles th:nth-child(3),#titles td:nth-child(3){width:auto;min-width:0}
 }
 </style>
