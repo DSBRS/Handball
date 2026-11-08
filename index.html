@@ -576,13 +576,42 @@ body.tab-mode:not(.page-home) .topnav{display:flex}
   }
 }
 </style>
-<style id="mobile-home-top-crop-fix">
+
+<style id="mobile-fixed-home-final">
+/* Mobile home: fixed to one viewport, no scrolling. */
 @media (max-width:650px){
+  html:has(body.tab-mode.page-home),
+  body.tab-mode.page-home{
+    height:100%;
+    height:100dvh;
+    min-height:0 !important;
+    overflow:hidden !important;
+    overscroll-behavior:none;
+    background:var(--navy2);
+  }
+  body.tab-mode.page-home .hero{
+    height:100vh !important;
+    height:100dvh !important;
+    min-height:0 !important;
+    overflow:hidden !important;
+  }
   body.tab-mode.page-home .hero-inner{
-    padding-top:12px !important;
+    height:100% !important;
+    min-height:0 !important;
+    padding:calc(env(safe-area-inset-top, 0px) + 18px) 18px calc(env(safe-area-inset-bottom, 0px) + 18px) !important;
+    justify-content:flex-start !important;
+    overflow:hidden !important;
   }
-  body.tab-mode.page-home .eyebrow{
-    margin-top:0 !important;
+  body.tab-mode.page-home .eyebrow{margin-bottom:8px !important;}
+  body.tab-mode.page-home .hero h1{font-size:clamp(42px,12vw,50px);}
+  body.tab-mode.page-home .hero p{margin:16px 0 0 !important;line-height:1.6 !important;}
+  body.tab-mode.page-home .hero-actions{
+    margin-top:auto !important;
+    padding-top:18px !important;
+    padding-bottom:0 !important;
+    gap:10px !important;
+    flex-shrink:0;
   }
+  body.tab-mode.page-home .hero-actions a{padding:11px 16px !important;}
 }
 </style>
