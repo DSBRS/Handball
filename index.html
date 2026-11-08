@@ -767,3 +767,50 @@ body.tab-mode.page-guide #pos > *:last-child{margin-bottom:0 !important;}
   body.tab-mode:not(.page-home) main{padding-bottom:20px !important;}
 }
 </style>
+
+
+<style id="remove-bottom-gap-final">
+/* Final override: hidden tab sections must take up zero layout space. */
+body.tab-mode .app-page{
+  display:none !important;
+}
+body.tab-mode.page-schedule .page-schedule,
+body.tab-mode.page-guide .page-guide,
+body.tab-mode.page-league .page-league,
+body.tab-mode.page-doosan .page-doosan,
+body.tab-mode.page-watch .page-watch{
+  display:block !important;
+}
+
+/* Remove the artificial tail under inner-page content. */
+body.tab-mode:not(.page-home),
+body.tab-mode:not(.page-home) main{
+  min-height:0 !important;
+  height:auto !important;
+}
+body.tab-mode:not(.page-home) main{
+  padding-bottom:0 !important;
+}
+body.tab-mode.page-guide #pos,
+body.tab-mode.page-league #titles,
+body.tab-mode.page-watch #faq{
+  margin-bottom:0 !important;
+}
+
+/* No separate footer/empty footer area on inner pages. */
+body.tab-mode:not(.page-home) footer,
+body.tab-mode.page-watch .watch-inline-footer{
+  display:none !important;
+  height:0 !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+}
+
+@media(max-width:650px){
+  body.tab-mode:not(.page-home) main{
+    padding-bottom:0 !important;
+  }
+}
+</style>
